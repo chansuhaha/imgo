@@ -1,0 +1,22 @@
+git init
+
+git remote add origin https://github.com/chansuhaha/imgo.git
+
+
+Pull
+	-- git pull origin master
+
+
+
+Push
+
+	-- git status
+
+
+	-- git add .
+
+
+	-- git commit -m "message"
+
+
+	-- git push originn +master
