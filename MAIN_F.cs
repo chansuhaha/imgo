@@ -30,6 +30,7 @@ namespace IMCC_ALL_OF_POE_GET
         
         // open 소스 형상관리 확인
         //DataTable dtxml;
+        // 형상관리 진행중....
 
         protected override CreateParams CreateParams
         {
