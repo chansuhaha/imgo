@@ -19,4 +19,4 @@ Push
 	-- git commit -m "message"
 
 
-	-- git push originn +master
+	-- git push origin +master
