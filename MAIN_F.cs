@@ -25,6 +25,7 @@ namespace IMCC_ALL_OF_POE_GET
         private bool IsDeveloper = false;
         int multi_Channel_Count = 4;
         
+        // 한줄 더 추가
         private const string sMulti_Channel_Detector = "GASTRON_GTM_1000G";
         
         // open 소스 형상관리 확인
