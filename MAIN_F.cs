@@ -27,7 +27,7 @@ namespace IMCC_ALL_OF_POE_GET
         
         private const string sMulti_Channel_Detector = "GASTRON_GTM_1000G";
         
-        
+        // open 소스 형상관리 확인
         //DataTable dtxml;
 
         protected override CreateParams CreateParams
