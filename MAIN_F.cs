@@ -27,6 +27,7 @@ namespace IMCC_ALL_OF_POE_GET
         
         private const string sMulti_Channel_Detector = "GASTRON_GTM_1000G";
         
+        
         //DataTable dtxml;
 
         protected override CreateParams CreateParams
@@ -96,12 +97,12 @@ namespace IMCC_ALL_OF_POE_GET
 #endif
             killProcess();
 
-            #region ¹öÆ° ÄÜÆ®·Ñ Á¶Á¤
+            #region ï¿½ï¿½Æ° ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             this.Start_Gubun("I");
 
             #endregion
 
-            #region ·Î±×°æ·Î È®ÀÎ
+            #region ï¿½Î±×°ï¿½ï¿½ È®ï¿½ï¿½
             currentPath = Environment.CurrentDirectory;
             currentPathLog = Environment.CurrentDirectory + @"\Log";
 
@@ -113,7 +114,7 @@ namespace IMCC_ALL_OF_POE_GET
             }
             #endregion
 
-            #region ¼³Á¤ÆÄÀÏ ºÒ·¯¿À±â
+            #region ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
             string tempCheckSetting = "";
 
             tempCheckSetting = ConfigurationManager.AppSettings["CTL_NODE"].ToString();
@@ -242,27 +243,27 @@ namespace IMCC_ALL_OF_POE_GET
 
 
 
-            #endregion ¼³Á¤ÆÄÀÏ ºÒ·¯¿À±â
+            #endregion ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 
-            #region °¨Áö±â ¸ðµ¨ ¼±ÅÃ ·Îµå ÃÊ±âÈ­
+            #region ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½Ê±ï¿½È­
             this.DectorModelSetting();
 
             //sDetector = this.DetectorName;
             //this.Text = string.Format("{0}  {1}",sDetector , this.Text);
             #endregion
 
-            #region °øÅë ÀúÀå¿ë Å¬·¡½º ·Îµå
+            #region ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½
             CommonData.CommonDataInit(this);
             #endregion
 
-            #region ·Î±× ¸®½ºÆ® ÄÜÆ®·Ñ ¼³Á¤
+            #region ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             this.LogList_Init();
             #endregion
 
 
 
 
-            #region ¸ð´ÏÅÍ¸µ¿ë ±×¸®µå ÃÊ±âÈ­
+            #region ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
             try
             {
                 this.POE_NodeDataInit(this.grdView);
@@ -271,7 +272,7 @@ namespace IMCC_ALL_OF_POE_GET
             catch { }
             #endregion
 
-            #region map ¼³Á¤¿ë ±×¸®µå ÃÊ±âÈ­
+            #region map ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
             try { 
                 this.POE_NodeDataInit(this.grdMap);
                 this.GridGroupSetting(this.grdMap);
@@ -279,15 +280,15 @@ namespace IMCC_ALL_OF_POE_GET
             catch { }
             #endregion
 
-            #region ±×¸®µå ½ºÅ¸ÀÏ ¼³Á¤¿ë
+            #region ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             this.LoadGridStyle();
             #endregion
 
-            #region ÀÛ¾÷¾²·¹µå Count Ç¥½Ã
+            #region ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Count Ç¥ï¿½ï¿½
             this.ThreadCountLable();
             #endregion
 
-            #region °³¹ßÀÚ ¸ðµå
+            #region ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             if (IsDeveloper == false) mainNodeTab.TabPages.Remove(this.tabStatus);
             #endregion
 
@@ -296,14 +297,14 @@ namespace IMCC_ALL_OF_POE_GET
 
         private void ThreadCountLable()
         {
-            this.lblAvailable.Text = "- »ç¿ë°¡´ÉÇÑ ºñµ¿±â I/O ¾²·¹µå ¼ö : ";
-            this.lblMax.Text = "- »ç¿ë°¡´ÉÇÑ ÀÛ¾÷¾²·¹µå ¼ö: ";
-            this.lblUsedThread.Text = "- »ç¿ëÁßÀÎ ¾²·¹µå ¼ö :";
-            this.lblWorkerThread.Text = "- ÃÖ´ë ÀÛ¾÷ÀÚ ¾²·¹µå¼ö :";
-            this.lblCompletitionThread.Text = "- ÃÖ´ë ºñµ¿±â I/O ¾²·¹µå¼ö :";
+            this.lblAvailable.Text = "- ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½ï¿½ ï¿½ñµ¿±ï¿½ I/O ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : ";
+            this.lblMax.Text = "- ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: ";
+            this.lblUsedThread.Text = "- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :";
+            this.lblWorkerThread.Text = "- ï¿½Ö´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :";
+            this.lblCompletitionThread.Text = "- ï¿½Ö´ï¿½ ï¿½ñµ¿±ï¿½ I/O ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :";
         }
 
-        #region ±×¸®µå Style ¼³Á¤ ¼±¾ð
+        #region ï¿½×¸ï¿½ï¿½ï¿½ Style ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         private void LoadGridStyle()
         {
 
@@ -323,7 +324,7 @@ namespace IMCC_ALL_OF_POE_GET
             csyellow.ForeColor = Color.Yellow;
 
         }
-        #endregion ±×¸®µå Style ¼³Á¤ ¼±¾ð
+        #endregion ï¿½×¸ï¿½ï¿½ï¿½ Style ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -340,7 +341,7 @@ namespace IMCC_ALL_OF_POE_GET
 
 
 
-        #region °¨Áö±â Model ¼³Á¤
+        #region ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Model ï¿½ï¿½ï¿½ï¿½
         private void DectorModelSetting()
         {
             int forcnt = sDectors.Length;
@@ -351,9 +352,9 @@ namespace IMCC_ALL_OF_POE_GET
             cboDetector.SelectedIndex = 0;
             //cboDetector.Enabled = false;
         }
-        #endregion °¨Áö±â Model ¼³Á¤
+        #endregion ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Model ï¿½ï¿½ï¿½ï¿½
 
-        #region Åë½Å ½ÃÀÛ, Á¾·á¹öÆ° ÀÌº¥Æ® Ã³¸®
+        #region ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
         private void btnExit_Click(object sender, EventArgs e)
         {
             StopComm();
@@ -373,7 +374,7 @@ namespace IMCC_ALL_OF_POE_GET
 
                     StartComm();
 
-                    // ÀÌº¥Æ® Á¦°Å
+                    // ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½
                     this.mainNodeTab.SelectedIndexChanged -= this.mainNodeTab_SelectedIndexChanged;
 
                     this.WRITE("F", 0, this.txtCtlNode.Text, "0", "0", string.Format(" Application Communication started..."));
@@ -424,9 +425,9 @@ namespace IMCC_ALL_OF_POE_GET
 
         }
 
-        #endregion Åë½Å ½ÃÀÛ, Á¾·á¹öÆ° ÀÌº¥Æ® Ã³¸®
+        #endregion ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Æ° ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 
-        #region Åë½Å ½ÃÀÛ ½Ã ÄÜÆ®·Ñ Ã³¸® ( ¼û±æÁö ¸»Áö)
+        #region ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ Ã³ï¿½ï¿½ ( ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         private void Start_Gubun(string sGubun)
         {
             //this.menuStrip1.Visible = false;
@@ -481,7 +482,7 @@ namespace IMCC_ALL_OF_POE_GET
             this.cboDetector.DropDownStyle = ComboBoxStyle.DropDownList;
             
         }
-        #endregion Åë½Å ½ÃÀÛ ½Ã ÄÜÆ®·Ñ Ã³¸® ( ¼û±æÁö ¸»Áö)
+        #endregion ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ Ã³ï¿½ï¿½ ( ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
 
         private void LogList_Init()
@@ -534,7 +535,7 @@ namespace IMCC_ALL_OF_POE_GET
                         grd.Rows[k + 1]["POE_IP"] = poe_list[k].POE_IP;
                         grd.Rows[k + 1]["POE_PORT"] = poe_list[k].POE_PORT;
 
-                        // ctl ³ëµå Á¤º¸°¡ ¿ÜºÎ¿¡¼­ º¯°æ µÇ¾úÀ» °æ¿ì Ã³¸®
+                        // ctl ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÜºÎ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
                         if (bSave ==false && this.txtCtlNode.Text.Equals(poe_list[k].CTL_NODE) == false)
                         {
                             bSave = true;
@@ -554,7 +555,7 @@ namespace IMCC_ALL_OF_POE_GET
                         grd.Cols["DETECTOR"].AllowEditing = true;
                         //grd.Cols["CTL_NODE"].AllowEditing = false;
 
-                        // ctl ³ëµå Á¤º¸°¡ ¿ÜºÎ¿¡¼­ º¯°æ µÇ¾úÀ» °æ¿ì ÀúÀå
+                        // ctl ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÜºÎ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                         if (bSave)
                         {
                             SetMidasInfo();
@@ -605,7 +606,7 @@ namespace IMCC_ALL_OF_POE_GET
 
 
 
-        #region Point Á¤º¸¸¦ ÀúÀåÇÑ´Ù.
+        #region Point ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 
         ObservableCollection<POE_Node> poe_list = null;
 
@@ -705,13 +706,13 @@ namespace IMCC_ALL_OF_POE_GET
             }
             return true;
         }
-        #endregion Point Á¤º¸¸¦ ÀúÀåÇÑ´Ù.
+        #endregion Point ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 
 
 
 
 
-        #region Åë½Å½ÃÀÛ ÇÔ¼ö
+        #region ï¿½ï¿½Å½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
         private void StartComm()
         {
             try
@@ -736,10 +737,10 @@ namespace IMCC_ALL_OF_POE_GET
             }
             catch { }
         }
-        #endregion Åë½Å½ÃÀÛ ÇÔ¼ö
+        #endregion ï¿½ï¿½Å½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
 
 
-        #region ¾²·¹µå¿¡¼­ ¶óº§¿¡ °ª ¼³Á¤
+        #region ï¿½ï¿½ï¿½ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½óº§¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         private delegate void SetTextBoxCallback(Label lbl, String str);
         private void SetTextBox(Label lbl, String str)
         {
@@ -757,10 +758,10 @@ namespace IMCC_ALL_OF_POE_GET
             }
             catch { }
         }
-        #endregion ¾²·¹µå¿¡¼­ ¶óº§¿¡ °ª ¼³Á¤
+        #endregion ï¿½ï¿½ï¿½ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½óº§¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
-        #region Åë½Å·ÎÁ÷
+        #region ï¿½ï¿½Å·ï¿½ï¿½ï¿½
         Object[] objArray = null;
         // One event is used for each Fibonacci object.
 
@@ -769,7 +770,7 @@ namespace IMCC_ALL_OF_POE_GET
         int iWorkerThread = 0;
         int iCompletionThread = 0;
 
-        // ÇÁ·Î±×·¥ Àü¹ÝÀÇ Thread 
+        // ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Thread 
         public void THREAD_COMM_START()
         {
             try
@@ -784,7 +785,7 @@ namespace IMCC_ALL_OF_POE_GET
 
 
                 thCount = run_detectors.Count;
-                // Array °´Ã¼ °³¼ö¸¸Å­ »ý¼º
+                // Array ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½
                 objArray = new Object[thCount];
 
 
@@ -819,12 +820,12 @@ namespace IMCC_ALL_OF_POE_GET
 
                 }
 
-                // ½ÇÁ¦ »ý¼ºÇÑ °´Ã¼ ¼ö¸¸Å­ ¸®»çÀÌÁî ÇÑ´Ù.
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
                 Array.Resize(ref objArray, k);
                 iUploadCheck = objArray.Length;
                 thCount = iUploadCheck;
 
-                // ±×¸®µå »ö»óÃ³¸®
+                // ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
                 foreach (POE_Node node in poe_list.Where(x => x.VALID_YN != "Y"))
                 {
                     GRID_WRITE_MON(node.SEQ, node.CTL_NODE.ToString(), 9); // 0 - STOP 1 - SUCCESS 2 - FAIL  3-9 OTHER
@@ -836,7 +837,7 @@ namespace IMCC_ALL_OF_POE_GET
                 int iwork = 0;
                 int iIOCom = 0;
                 ThreadPool.GetMaxThreads(out iwork, out iIOCom);
-                // MaxThreads ¼³Á¤Àº ½Ã½ºÅÛÀÇ ¸ò °ÇµéÁö ¸»ÀÚ!!!
+                // MaxThreads ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!!!
                 //ThreadPool.SetMaxThreads(150, iIOCom);
                 ThreadPool.SetMinThreads(iUploadCheck / 3, iIOCom);
 
@@ -883,14 +884,14 @@ namespace IMCC_ALL_OF_POE_GET
                     GRID_WRITE_MON(node.SEQ, node.CTL_NODE, 0); // 0 - STOP 1 - SUCCESS 2 - FAIL  3-9 OTHER
                 }
 
-                // »ý¼ºÇÑ ¹è¿­ °³Ã¼ »èÁ¦ 
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ 
                 objArray = null;
             }
             catch { }
 
 
         }
-        #endregion ¾²·¹µå¿¡¼­ ¶óº§¿¡ °ª ¼³Á¤
+        #endregion ï¿½ï¿½ï¿½ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½óº§¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -903,15 +904,15 @@ namespace IMCC_ALL_OF_POE_GET
                     try
                     {
                         ThreadPool.GetMaxThreads(out iWorkerThread, out iCompletionThread);
-                        SetTextBox(this.lblWorkerThread, "- ÃÖ´ë ÀÛ¾÷ÀÚ ¾²·¹µå¼ö :  " + iWorkerThread.ToString());
-                        SetTextBox(this.lblCompletitionThread, "- ÃÖ´ë ºñµ¿±â I/O ¾²·¹µå¼ö :  " + iCompletionThread.ToString());
+                        SetTextBox(this.lblWorkerThread, "- ï¿½Ö´ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :  " + iWorkerThread.ToString());
+                        SetTextBox(this.lblCompletitionThread, "- ï¿½Ö´ï¿½ ï¿½ñµ¿±ï¿½ I/O ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :  " + iCompletionThread.ToString());
 
                         ThreadPool.GetAvailableThreads(out iWorkth, out iComP);
 
-                        SetTextBox(this.lblMax, "- »ç¿ë°¡´ÉÇÑ ÀÛ¾÷¾²·¹µå ¼ö: " + iWorkth.ToString());
-                        SetTextBox(this.lblAvailable, "- »ç¿ë°¡´ÉÇÑ ºñµ¿±â I/O ¾²·¹µå ¼ö :  " + iComP.ToString());
+                        SetTextBox(this.lblMax, "- ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: " + iWorkth.ToString());
+                        SetTextBox(this.lblAvailable, "- ï¿½ï¿½ë°¡ï¿½ï¿½ï¿½ï¿½ ï¿½ñµ¿±ï¿½ I/O ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :  " + iComP.ToString());
 
-                        SetTextBox(this.lblUsedThread, "- »ç¿ëÁßÀÎ ¾²·¹µå ¼ö :  " + (iWorkerThread - iWorkth).ToString());
+                        SetTextBox(this.lblUsedThread, "- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :  " + (iWorkerThread - iWorkth).ToString());
 
                         Thread.Sleep(2000);
 
@@ -919,7 +920,7 @@ namespace IMCC_ALL_OF_POE_GET
                     }
                     catch (Exception ex)
                     {
-                        SetTextBox(this.lblWorkerThread, "¿À·ù¹ß»ý :  " + ex.Message);
+                        SetTextBox(this.lblWorkerThread, "ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½ :  " + ex.Message);
                     }
                 }
             }
@@ -1322,8 +1323,8 @@ namespace IMCC_ALL_OF_POE_GET
             cs.BackColor = Color.LightGray;
 
             string sDetector = this.cboDetector.Items[this.cboDetector.SelectedIndex].ToString();
-            int pointCnt = GetPointPerDetector(); // °¨Áö±â´ç Addres Á¡À¯À² ¼ö
-            int iUseCnt = this.getChannelCount(sDetector); // ½ÇÁ¦ »ç¿ë Æ÷ÀÎÆ® ¼ö
+            int pointCnt = GetPointPerDetector(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Addres ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+            int iUseCnt = this.getChannelCount(sDetector); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
             string sIP_Address = GetLastIP();
 
             if (sIP_Address.Equals(""))
@@ -1452,7 +1453,7 @@ namespace IMCC_ALL_OF_POE_GET
 
         private int getChannelCount(string sDetectorName)
         {
-            // °­Á¦·Î ¸ðµç °¨Áö±â Ã¤³ÎÀ» 4°³·Î °íÁ¤ÇÑ´Ù.
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
             return sDetectorName.Equals(sMulti_Channel_Detector) ? this.multi_Channel_Count : 1;
         }
         private int GetPointPerDetector()
@@ -1654,7 +1655,7 @@ namespace IMCC_ALL_OF_POE_GET
                 ObservableCollection<POE_Node> midasList = new ObservableCollection<POE_Node>();
 
                 string sDetector = this.cboDetector.Items[this.cboDetector.SelectedIndex].ToString();
-                int iUseCnt = this.getChannelCount(sDetector); // ½ÇÁ¦ »ç¿ë Æ÷ÀÎÆ® ¼ö
+                int iUseCnt = this.getChannelCount(sDetector); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
                 int pointPerDetector = this.GetPointPerDetector();
 
                 POE_Node node;
@@ -1666,10 +1667,10 @@ namespace IMCC_ALL_OF_POE_GET
                     node.Channel = (i + 1) % this.GetPointPerDetector() == 0 ? 4 : (i + 1) % this.GetPointPerDetector();
                     //node.Channel = this.ChannelCount;
                     node.POINT_NM = string.Format("{0}-{1:D3}", this.txtCtlNode.Text, i + 1);
-                    // ±âÁ¸¿¡´Â 4Ã¤³ÎÀº ÀüºÎ Y, 1Ã¤³ÎÀº Ã¹¹øÂ°²¨¸¸ Y ·Î ¼ÂÆÃ 
+                    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Y, 1Ã¤ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ Y ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
                     node.VALID_YN = iUseCnt >= node.Channel ? "Y" : "N";
 
-                    // 2019.07.29 == ¿äÃ»»çÇ× ¹Ý¿µ ÃÖÃÊ ¹«Á¶°Ç 'N'
+                    // 2019.07.29 == ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'N'
                     // node.VALID_YN = "N";
                     node.DETECTOR = cboDetector.Items[cboDetector.SelectedIndex].ToString();
                     ipAddress = Increase_IP(this.txtIPAddress.Text, i / this.GetPointPerDetector());
@@ -1747,14 +1748,14 @@ namespace IMCC_ALL_OF_POE_GET
 
                     if ((Button)sender == this.btnUp)
                     {
-                        // ¸Ç À§ÂÊRow ¿¡¼­ Up ÇÒ°æ¿ì
+                        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Row ï¿½ï¿½ï¿½ï¿½ Up ï¿½Ò°ï¿½ï¿½
                         if (iSel == 1) return;
                         iadddel = iadddel * -1;
                         iMv_Ch_Count = icur_ch * iadddel;
                     }
                     else
                     {
-                        // ¸Ç ¾Æ·¡ÂÊ Row ¿¡¼­ Down ÇÒ°æ¿ì
+                        // ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ Row ï¿½ï¿½ï¿½ï¿½ Down ï¿½Ò°ï¿½ï¿½
                         if (iSel == grdMap.Rows.Count) return;
 
                         iMv_Ch_Count = iCh_Count - icur_ch + 1;
