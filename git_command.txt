@@ -1,12 +1,19 @@
+// Git처음 시작시...
+
 git init
+
+// Git 리파지 토리 등록
 
 git remote add origin https://github.com/chansuhaha/imgo.git
 
 
+// Git 소스 가져오기
 Pull
 	-- git pull origin master
 
 
+
+// 변경소스 업로드
 
 Push
 
